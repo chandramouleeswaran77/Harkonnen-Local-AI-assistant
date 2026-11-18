@@ -1,0 +1,201 @@
+/* ==========================================================================
+   COMMON UI PRIMITIVES (Modals, Toasts, Dialogs, Skeletons)
+   ========================================================================== */
+
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  background: var(--bg-overlay);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.modal-panel {
+  width: 100%;
+  max-width: 740px;
+  max-height: min(86vh, 760px);
+  background: var(--bg-surface);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.modal-panel.wide {
+  max-width: 900px;
+}
+
+.modal-panel.narrow {
+  max-width: 480px;
+}
+
+.modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 22px;
+  border-bottom: 1px solid var(--border-subtle);
+  flex-shrink: 0;
+}
+
+.modal-title-group {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.modal-title {
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
+}
+
+.modal-subtitle {
+  font-size: var(--text-xs);
+  color: var(--text-tertiary);
+}
+
+.modal-body {
+  flex: 1;
+  overflow-y: auto;
+  padding: 20px 22px;
+}
+
+.modal-body.no-pad {
+  padding: 0;
+  display: flex;
+  min-height: 0;
+}
+
+.modal-footer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+  padding: 14px 22px;
+  border-top: 1px solid var(--border-subtle);
+  background: var(--bg-sidebar);
+  flex-shrink: 0;
+}
+
+/* Toast Notifications */
+.toast-container {
+  position: fixed;
+  bottom: 22px;
+  right: 22px;
+  z-index: 120;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  pointer-events: none;
+  max-width: 380px;
+}
+
+.toast-item {
+  pointer-events: auto;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 11px 14px;
+  border-radius: var(--radius-md);
+  background: var(--bg-surface-elevated);
+  border: 1px solid var(--border-default);
+  box-shadow: var(--shadow-md);
+  font-size: var(--text-sm);
+  color: var(--text-primary);
+}
+
+.toast-item.success {
+  border-color: rgba(86, 179, 133, 0.35);
+}
+
+.toast-item.error {
+  border-color: rgba(212, 106, 106, 0.4);
+}
+
+.toast-item.warning {
+  border-color: rgba(212, 157, 84, 0.38);
+}
+
+.toast-icon {
+  flex-shrink: 0;
+}
+
+.toast-icon.success {
+  color: var(--status-success);
+}
+
+.toast-icon.error {
+  color: var(--status-danger);
+}
+
+.toast-icon.warning {
+  color: var(--status-warning);
+}
+
+.toast-icon.info {
+  color: var(--accent);
+}
+
+.toast-text {
+  flex: 1;
+  line-height: 1.4;
+}
+
+/* Confirm Dialog */
+.confirm-warning-box {
+  padding: 12px 14px;
+  border-radius: var(--radius-sm);
+  background: var(--status-warning-soft);
+  border: 1px solid rgba(212, 157, 84, 0.25);
+  color: var(--text-primary);
+  font-size: var(--text-sm);
+  line-height: 1.5;
+  margin-top: 12px;
+}
+
+/* Empty State */
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 40px 24px;
+  gap: 10px;
+  color: var(--text-tertiary);
+}
+
+.empty-state-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-md);
+  background: var(--bg-surface-elevated);
+  border: 1px solid var(--border-subtle);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-secondary);
+  margin-bottom: 4px;
+}
+
+.empty-state h4 {
+  font-size: var(--text-base);
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.empty-state p {
+  font-size: var(--text-sm);
+  max-width: 340px;
+  line-height: 1.5;
+}

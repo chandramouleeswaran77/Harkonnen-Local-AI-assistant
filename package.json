@@ -1,0 +1,17 @@
+{
+  "name": "harkonnen",
+  "version": "1.0.0",
+  "description": "HARKONNEN — Your Intelligence. Your Machine. Your Rules. A local-first personal AI operating environment.",
+  "private": true,
+  "scripts": {
+    "install:all": "npm --prefix backend install && npm --prefix frontend install",
+    "dev": "concurrently -n \"API,UI\" -c \"yellow,cyan\" \"npm --prefix backend run dev\" \"npm --prefix frontend run dev\"",
+    "dev:backend": "npm --prefix backend run dev",
+    "dev:frontend": "npm --prefix frontend run dev",
+    "build": "npm --prefix frontend run build",
+    "start": "npm --prefix backend start"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.0"
+  }
+}
